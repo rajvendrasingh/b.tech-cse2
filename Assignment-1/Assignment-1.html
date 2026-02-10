@@ -7,6 +7,63 @@
     <link rel="stylesheet" href="Assignment-1.css">
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Event Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="title">🎯 Smart Event Dashboard</h1>
+
+  <div class="container">
+
+    <!-- Add Event Form -->
+    <div class="card">
+      <h2>Add New Event</h2>
+
+      <input type="text" id="title" placeholder="Event Title">
+      <input type="date" id="date">
+
+      <select id="category">
+        <option>Conference</option>
+        <option>Meeting</option>
+        <option>Workshop</option>
+      </select>
+
+      <textarea id="description" placeholder="Description"></textarea>
+
+      <button onclick="addEvent()">Add Event</button>
+    </div>
+
+    <!-- Event List -->
+    <div class="card"> 
+      <h2>My Events</h2>
+
+      <div class="btn-group">
+        <button onclick="clearEvents()">Clear All</button>
+        <button onclick="addSample()">Add Sample</button>
+      </div>
+
+      <ul id="eventList"></ul>
+    </div>
+
+  </div>
+
+  <!-- DOM Demo -->
+  <div class="demo">
+    <h2>DOM Manipulation Demo</h2>
+    <p id="demoText"><strong>Bold Text</strong> with spaces</p>
+    <button onclick="showInnerHTML()">innerHTML</button>
+    <button onclick="showTextContent()">textContent</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
     
 </body>
 <script src="Assignment-1.js"></script>
