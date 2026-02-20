@@ -1,26 +1,30 @@
 function addEvent() {
-  const title = document.getElementById("title").value;
-  const date = document.getElementById("date").value;
-  const category = document.getElementById("category").value;
-  const description = document.getElementById("description").value;
+  let title = document.getElementById("title").value;
+  let date = document.getElementById("date").value;
+  let category = document.getElementById("category").value;
+  let desc = document.getElementById("desc").value;
 
-  if (title === "") {
-    alert("Please enter event title");
+  if(title === "" || date === "") {
+    alert("Please fill required fields");
     return;
   }
 
-  const li = document.createElement("li");
-  li.innerHTML = `
-    <strong>${title}</strong> <br>
-    ${date} | ${category} <br>
-    ${description}
+  let eventBox = document.createElement("div");
+  eventBox.className = "event-item";
+
+  eventBox.innerHTML = `
+    <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+    <h3>${title}</h3>
+    <p>📅 ${date}</p>
+    <p><b>${category}</b></p>
+    <p>${desc}</p>
   `;
 
-  document.getElementById("eventList").appendChild(li);
+  document.getElementById("eventList").appendChild(eventBox);
 
   document.getElementById("title").value = "";
   document.getElementById("date").value = "";
-  document.getElementById("description").value = "";
+  document.getElementById("desc").value = "";
 }
 
 function clearEvents() {
@@ -28,17 +32,11 @@ function clearEvents() {
 }
 
 function addSample() {
-  const li = document.createElement("li");
-  li.innerHTML = "<strong>Sample Event</strong><br>2026-02-10 | Conference";
-  document.getElementById("eventList").appendChild(li);
+  document.getElementById("title").value = "Emifest";
+  document.getElementById("date").value = "2026-01-14";
+  document.getElementById("category").value = "Social";
+  document.getElementById("desc").value = "lorem ipsum";
+  addEvent();
 }
 
-function showInnerHTML() {
-  const text = document.getElementById("demoText").innerHTML;
-  alert("innerHTML: " + text);
-}
 
-function showTextContent() {
-  const text = document.getElementById("demoText").textContent;
-  alert("textContent: " + text);
-}
